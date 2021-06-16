@@ -1,0 +1,12 @@
+default: &default
+  bootstrapServers: "localhost:9092"
+  offsetReset: "latest"
+  enableAutoCommit: false
+  consumerGroup: "threshold-watcher"
+  topics:
+    source: "loss-check-events"
+    destination: "threshold-events"
+
+development:
+  <<: *default
+  offsetReset: "earliest"
